@@ -1,18 +1,6 @@
-from itertools import count
-from itertools import cycle
-
-for n in count(int(input("Введите число: "))):
-    if n > 15:
-        break
-    else:
-        print(n)
-
-
-my_list = ["xyz", "ABC", 123, 9, 8, 7]
-counter = 0
-for l in cycle(my_list):
-    if counter > 7:
-        break
-    else:
-        counter += 1
-        print(l)
+my_dict = {}
+with open("my_file_6.txt", "r") as my_file:
+    for l in my_file:
+        subject_name, lecture, practice, lab = l.split()
+        my_dict[subject_name] = int(lecture) + int(practice) + int(lab)
+    print(f'Общее количество занятий - \n {my_dict}')
