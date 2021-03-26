@@ -1,4 +1,14 @@
-my_list = [5, 3, 7, 0, 27, 19, 100, 108]
-my_new_list = [l for number, l in enumerate(my_list) if my_list[number-1]<my_list[number]]
-print(my_list)
-print(my_new_list)
+my_file_2 = open("my_file_2.txt", "r")
+y = my_file_2.readlines()
+print(f'Количество строк: {len(y)}')
+my_file_2 = open("my_file_2.txt", "r")
+while True:
+    z = my_file_2.readline().split()
+    if not z:
+        break
+    print(z)
+    print(f'Кол-во слов: {len(z)}')
+my_file_2.close()
+
+
+
