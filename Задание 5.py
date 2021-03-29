@@ -1,14 +1,38 @@
-def summary():
-    try:
-        with open('my_file_5.txt', 'w+') as file_obj:
-            line = input('Введите цифры, разделенные пробелами \n')
-            file_obj.writelines(line)
-            number = line.split()
-            print(sum(map(int, number)))
-    except IOError:
-        print('Ошибка в файле')
-    except ValueError:
-        print('Неправильный номер.')
+class Stationary:
+    def __init__(self, title):
+        self.title = title
+
+    def draw(self):
+        return f'Запуск отрисовки {self.title}'
 
 
-summary()
+class Pen(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки ручкой'
+
+
+class Pencil(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки карандашом'
+
+
+class Handle(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки маркером'
+
+
+pen = Pen('Ручка')
+pencil = Pencil('Карандаш')
+handle = Handle('Маркер')
+print(pen.draw())
+print(pencil.draw())
+print(handle.draw())
