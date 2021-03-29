@@ -1,5 +1,0 @@
-Schwarznegger 20000000
-Vasiliev 15000
-Lozhkin 21000
-Pirogov 3000
-Timofeev 47500
