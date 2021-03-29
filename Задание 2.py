@@ -1,14 +1,17 @@
-my_file_2 = open("my_file_2.txt", "r")
-y = my_file_2.readlines()
-print(f'Количество строк: {len(y)}')
-my_file_2 = open("my_file_2.txt", "r")
-while True:
-    z = my_file_2.readline().split()
-    if not z:
-        break
-    print(z)
-    print(f'Кол-во слов: {len(z)}')
-my_file_2.close()
+class Road:
+    def __init__(self, _length, _width):
+        self._length = _length
+        self._width = _width
+
+    def mass(self):
+        return self._length * self._width
 
 
+class MassCount(Road):
+    def __init__(self, _length, _width, volume):
+        super().__init__(_length, _width)
+        self.volume = volume
 
+
+r = MassCount(12.5, 7000, 130)
+print(r.mass())
